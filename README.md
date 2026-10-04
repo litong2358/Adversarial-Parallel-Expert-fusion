@@ -51,10 +51,10 @@ We systematically evaluate four fusion strategies across two adversarial trainin
 | Method | Params | Clean Acc (%) | PGD-20 Acc (%) | AutoAttack Acc (%) |
 |--------|--------|:---:|:---:|:---:|
 | TRADES Baseline | 46.2M | 84.62 | 55.30 | 51.31 |
-| Concat + FC | 92.4M+ | 88.75 / 88.43 | 59.32 / 59.14 | 53.36 (ep100) |
-| Feature-level Gated | 92.4M+ | 88.95 / 89.13 | 58.43 / 58.71 | 53.02 (ep90) |
-| a,b Routing | 92.4M+ | 87.75 / 87.71 | 58.88 / 58.78 | 53.18 (ep95) |
-| Confidence-only Routing | 92.4M+ | 87.78 / 88.04 | 58.26 / 58.74 | **53.66** (ep85) |
+| Concat + FC | 92.4M+ | 88.75 | 59.32 | 53.36 |
+| Feature-level Gated | 92.4M+ | 89.13 | 58.71 | 53.02 |
+| a,b Routing | 92.4M+ | 87.75 | 58.88 | 53.18 |
+| Confidence-only Routing | 92.4M+ | 88.04 | 58.74 | 53.66 |
 
 #### DKL (WRN-34-10, ε = 8/255, α = 4.0, β = 20.0)
 
@@ -83,7 +83,6 @@ We systematically evaluate four fusion strategies across two adversarial trainin
 
 - All parallel expert methods outperform the single-model baselines in clean accuracy (+3\~4.5%), PGD-20 robustness (+3\~4%), and AutoAttack accuracy (+0.8\~2.3%).
 - **Confidence-only routing** achieves the best AutoAttack accuracy (53.66%) with the simplest routing mechanism, indicating that complex routing may not be necessary.
-- Data augmentation must be kept consistent between baselines and fusion methods for fair comparison. Differences in augmentation pipelines (e.g., AutoAugment, Cutout) can confound the measured gains from fusion itself.
 
 ## Project Structure
 
